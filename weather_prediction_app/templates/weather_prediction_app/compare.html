@@ -1,0 +1,30 @@
+<!-- compare.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Weather</title>
+    {% load static %}
+    {% csrf_token %}
+    <link rel="stylesheet" type="text/css" href="{% static 'weather_prediction_app/compare.css' %}">
+    <script src="{% static 'weather_prediction_app/compare.js' %}"></script>
+</head>
+<body>
+    <div class="overlay"></div>
+    <h1 id="page-heading">Weather Comparision</h1>
+    <div id="compare-container">
+        <div class="compare-inputs">
+            <input type="text" id="place1-input" placeholder="Enter first place name">
+            <input type="text" id="place2-input" placeholder="Enter second place name">
+            <button onclick="compareWeather()">Compare Weather</button>
+        </div>
+        <div id="comparison-results">
+            <div id="place1-weather" class="weather-box">
+                <div id="weather-info1"></div>
+            </div>
+            <div id="place2-weather" class="weather-box">
+                <div id="weather-info2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

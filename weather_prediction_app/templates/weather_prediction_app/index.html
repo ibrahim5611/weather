@@ -1,0 +1,40 @@
+<!-- Ensure this is in weather_prediction_app/templates/weather_prediction_app/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Prediction Application</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'weather_prediction_app/style.css' %}">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAPhbgC0BCWSN4TNt3slIsUzW27zJPhi4"></script>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Add this line for the overlay -->
+    <div id="container">
+        <h1 id="page-heading">Weather Prediction Application</h1>
+        <div id="search-container">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button onclick="getWeather()">Get Weather</button>
+            <button onclick="location.href='/compare'">Compare</button>
+        </div>
+        <div id="temperature-display">
+            <span id="temperature-value"></span>
+            <button id="unit-toggle" onclick="toggleTemperatureUnit()">°C</button>
+        </div>
+        <div id="weather-info-container">
+            <div id="weather-info"></div>
+            <div class="weather-details-box">
+                <p id="weather-location"></p>
+                <p id="precipitation"></p>
+                <p id="humidity"></p>
+                <p id="wind-speed"></p>
+                <p id="wind-direction"></p>
+                <p id="description" class="weather-description"></p>
+            </div>
+        </div>
+        <button id="toggle-map-btn" onclick="toggleMap()" style="display:none;">Maps</button>
+        <div id="map" style="height: 400px; width: 100%; display: none;"></div>
+    </div>
+    <script src="{% static 'weather_prediction_app/script.js' %}"></script>
+</body>
+</html>
