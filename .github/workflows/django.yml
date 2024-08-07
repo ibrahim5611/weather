@@ -28,6 +28,12 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+    - name: Run migrations
+      run: |
+        python manage.py makemigrations
+    - name: Run Migrtae
+      run: |
+        python manage.py migrate
     - name: Run server
       run: |
         python manage.py runserver
